@@ -22,6 +22,10 @@ Go to build -> libs folder
 ##### Endpoint to shut down the server
 >/stop
 
+## Release 
+
+https://github.com/ampiq/jb-oauth/releases/tag/1.0.0
+
 ## Demo
 ![alt-text](https://github.com/ampiq/jb-oauth/blob/master/oauthDemo.gif)
 
