@@ -27,17 +27,11 @@ public class SigningServlet extends HttpServlet {
   @Override
   protected void doGet(
 	  HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	System.out.println("GET /SIGNING");
 	req.getRequestDispatcher("/WEB-INF/jsp/signin.jsp").forward(req, resp);
   }
 
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	System.out.println("POST /SIGNING");
-	Map<String, String[]> parameterMap = req.getParameterMap();
-	for (Entry<String, String[]> str : parameterMap.entrySet()) {
-	  System.out.println(str.getKey() + Arrays.toString(str.getValue()));
-	}
 	String idToken = req.getParameter("idToken");
 	GoogleUser googleUser;
 	if (idToken != null) {

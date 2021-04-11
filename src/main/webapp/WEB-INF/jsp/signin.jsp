@@ -40,7 +40,6 @@
             var redirectUrl = 'signin';
 
             var form = $('<form name="idToken" id="idTokenId" action="' + redirectUrl + '" method="post">' +
-                // '<input type="text" name="id_token" value="' + googleUser.getAuthResponse().id_token + '" />' +
                 '<input type="text" name="idToken" value="' + googleUser.getAuthResponse().id_token + '" />' +
                 '</form>');
             $('body').append(form);
@@ -75,7 +74,6 @@
                                 <c:otherwise>
                                     <h4 class="text-light mb-2">Welcome :)</h4>
                                     <p class="lead text-light">Sign in below</p>
-<%--                                    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" align="center"></div>--%>
                                     <button id="googleButton" class="btn btn-block btn-icon btn-icon-google mb-3">
                                         Login With Google
                                     </button>
@@ -122,7 +120,5 @@
     console.log('callback - particles.js config loaded');
   });
 </script>
-<%--<script src="js/main.js"></script>--%>
-<%--<script src="js/googleApi.js" async defer></script>--%>
 </body>
 </html>
