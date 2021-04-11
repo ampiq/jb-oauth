@@ -14,37 +14,15 @@ bootWar {
 	version = '1.0.0'
 }
 
-//bootRun {
-//	jvmArgs "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005"
-//	sourceResources sourceSets.main
-//}
-
-
 group = 'org.jetbrains.task'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
-//mainClassName = 'org.jetbrains.task.oauth.view.Application'
 
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
 	}
 }
-
-
-
-//springBoot {
-//	executable = true
-//}
-
-
-//sourceSets {
-//	main {
-//		resources {
-//			srcDirs "src/main/resources", "src/main/webapp"
-//		}
-//	}
-//}
 
 repositories {
 	mavenCentral()
@@ -58,21 +36,4 @@ dependencies {
 	implementation group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '2.3.2.RELEASE'
 	implementation group: 'javax.servlet', name: 'jstl', version: '1.2'
 	implementation group: 'org.jetbrains', name: 'annotations', version: '16.0.1'
-//	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: '2.4.4'
-//	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-parent', version: '2.4.4', ext: 'pom'
-//	implementation group: 'org.eclipse.jdt.core.compiler', name: 'ecj', version: '4.6.1'
-
-//	implementation 'org.springframework.session:spring-session-core'
-//	compileOnly 'org.projectlombok:lombok'
-//	annotationProcessor 'org.projectlombok:lombok'
-//	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
-
-//test {
-//	useJUnitPlatform()
-//}
-//
-//
-//bootJar {
-//	launchScript()
-//}

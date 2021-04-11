@@ -19,8 +19,12 @@ public class OauthService {
   @Nullable
   public GoogleUser retrieveUser(@NotNull String idToken) {
     String url = GOOGLE_OAUTH_ENDPOINT + idToken;
-    ResponseEntity<GoogleUser> responseEntity = restTemplate.getForEntity(url, GoogleUser.class);
-    return responseEntity.getBody();
+    try {
+      ResponseEntity<GoogleUser> responseEntity = restTemplate.getForEntity(url, GoogleUser.class);
+      return responseEntity.getBody();
+    } catch (Exception e) {
+      return null;
+    }
   }
 
 }
