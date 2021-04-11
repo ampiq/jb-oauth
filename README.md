@@ -23,7 +23,7 @@ Go to build -> libs folder
 >/stop
 
 ## Demo
-![alt-text]()
+![alt-text](https://github.com/ampiq/jb-oauth/blob/master/oauthDemo.gif)
 
 by David Guyo
 
