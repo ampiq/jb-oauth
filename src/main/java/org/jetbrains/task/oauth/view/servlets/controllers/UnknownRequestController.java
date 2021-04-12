@@ -1,4 +1,4 @@
-package org.jetbrains.task.oauth.view.servlets;
+package org.jetbrains.task.oauth.view.servlets.controllers;
 
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.boot.web.servlet.error.ErrorController;

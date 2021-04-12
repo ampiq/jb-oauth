@@ -4,7 +4,7 @@ JetBrains task
 
 ## How to build
 
-> gradle bootJar
+> gradle bootWar
 
 ## How to run
 
@@ -24,7 +24,8 @@ Go to build -> libs folder
 
 ## Release 
 
-https://github.com/ampiq/jb-oauth/releases/tag/1.0.0
+13.04.21 https://github.com/ampiq/jb-oauth/releases/tag/Release-1.0.1
+11.04.21 https://github.com/ampiq/jb-oauth/releases/tag/1.0.0
 
 ## Demo
 ![alt-text](https://github.com/ampiq/jb-oauth/blob/master/oauthDemo.gif)

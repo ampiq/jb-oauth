@@ -13,41 +13,6 @@
     <meta name="google-signin-client_id" content="${appid}.apps.googleusercontent.com">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/login.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
-
-    <c:if test="${role == null}">
-        <script>
-          function onLoad() {
-            console.log('appid: ' + "<c:out value="${appid}"/>");
-            gapi.load('auth2', function() {
-              auth2 = gapi.auth2.init({
-                client_id: '<c:out value="${appid}"/>.apps.googleusercontent.com',
-                cookiepolicy: 'single_host_origin',
-                scope: 'profile email'
-              });
-              element = document.getElementById('googleButton');
-              auth2.attachClickHandler(element, {}, onSignIn, () => console.log('smth'));
-            });
-          }
-
-
-          function onSignIn() {
-            var googleUser = gapi.auth2.getAuthInstance().currentUser.get();
-            var id_token = googleUser.getAuthResponse().id_token;
-            console.log("ID Token: " + id_token);
-
-            var redirectUrl = 'signin';
-
-            var form = $('<form name="idToken" id="idTokenId" action="' + redirectUrl + '" method="post">' +
-                '<input type="text" name="idToken" value="' + googleUser.getAuthResponse().id_token + '" />' +
-                '</form>');
-            $('body').append(form);
-            form.submit();
-          }
-        </script>
-    </c:if>
-
 </head>
 <body>
 <div class="container-fluid">
@@ -59,14 +24,14 @@
                         <div id="particles-js"></div>
                         <div class="w-100">
                             <div class="logo mb-4">
-                                <img src="img/tc.png" alt="kodinger logo" class="img-fluid">
+                                <img src="img/tc.png" alt="tc logo" class="img-fluid">
                             </div>
                             <c:choose>
                                 <c:when test="${role != null}">
                                     <h4 class="text-light mb-2">Hello :)</h4>
                                     <p class="lead text-light">You are already signed in as <strong>${name}</strong></p>
                                     <form action="home" method="post">
-                                        <button class="btn btn-block btn-icon btn-icon-back mb-3">
+                                        <button id="homeButton" class="btn btn-block btn-icon btn-icon-back mb-3">
                                             Home
                                         </button>
                                     </form>
@@ -119,6 +84,12 @@
   particlesJS.load('particles-js', 'particlesjs-config.json', function() {
     console.log('callback - particles.js config loaded');
   });
+</script>
+
+<script type="text/javascript">
+  document.getElementById("googleButton").onclick = function () {
+    location.href = "https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Foauth&prompt=consent&response_type=code&client_id=${appid}.apps.googleusercontent.com&scope=email%20openid%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile";
+  };
 </script>
 </body>
 </html>

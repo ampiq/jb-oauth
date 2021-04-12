@@ -20,26 +20,6 @@
     <link rel="stylesheet" href="css/login.css">
     <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="${appid}.apps.googleusercontent.com">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
-
-    <c:if test="${role != null}">
-        <script>
-          function signOut() {
-            var auth2 = gapi.auth2.getAuthInstance();
-            auth2.signOut().then(function () {
-              console.log('User signed out.');
-            });
-          }
-
-          function onLoad() {
-            gapi.load('auth2', function() {
-              gapi.auth2.init();
-            });
-          }
-        </script>
-    </c:if>
-
 </head>
 <body>
 <div class="container-fluid">
@@ -51,14 +31,14 @@
                         <div id="particles-js"></div>
                         <div class="w-100">
                             <div class="logo mb-4">
-                                <img src="img/tc.png" alt="kodinger logo" class="img-fluid">
+                                <img src="img/tc.png" alt="tc logo" class="img-fluid">
                             </div>
                             <h4 class="text-light mb-2">Welcome :)</h4>
                             <p class="lead text-light">Welcome <strong>${name}</strong>! This is a home page</p>
                             <c:choose>
                                 <c:when test="${role != null}">
                                     <form action="logout" method="post">
-                                        <button class="btn btn-block btn-icon btn-icon-logout mb-3" onclick="signOut();">
+                                        <button class="btn btn-block btn-icon btn-icon-logout mb-3">
                                             Sign out
                                         </button>
                                     </form>
@@ -99,7 +79,6 @@
     </div>
 </div>
 <script src="js/particles.js"></script>
-<script src="js/googleApi.js?onload=onLoad" async defer></script>
 <script>
   particlesJS.load('particles-js', 'particlesjs-config.json', function() {
     console.log('callback - particles.js config loaded');
